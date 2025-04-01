@@ -1,0 +1,332 @@
+[
+  {
+    "question": "What is Succinct?",
+    "level": "easy",
+    "choices": {
+      "A": "A type of blockchain",
+      "B": "An exchange",
+      "C": "A Layer 2 company",
+      "D": "A crypto wallet"
+    },
+    "correct_answer": "C"
+  },
+  {
+    "question": "What technology does Succinct focus on?",
+    "level": "easy",
+    "choices": {
+      "A": "zkVM",
+      "B": "EVM",
+      "C": "Solana VM",
+      "D": "AVM"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What is the main programming language of zkVM?",
+    "level": "easy",
+    "choices": {
+      "A": "Rust",
+      "B": "Go",
+      "C": "Solidity",
+      "D": "C++"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "Which platform does Succinct's zkVM run on?",
+    "level": "easy",
+    "choices": {
+      "A": "Ethereum",
+      "B": "Cosmos",
+      "C": "Polkadot",
+      "D": "Binance Chain"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What does Succinct help reduce in blockchain?",
+    "level": "easy",
+    "choices": {
+      "A": "Gas fees",
+      "B": "Network speed",
+      "C": "Decentralization",
+      "D": "Number of nodes"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What does Succinct's zkVM allow?",
+    "level": "easy",
+    "choices": {
+      "A": "Zero-knowledge execution",
+      "B": "Data storage",
+      "C": "Faster transactions",
+      "D": "NFT creation"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What does Succinct help developers do?",
+    "level": "easy",
+    "choices": {
+      "A": "Build zk apps more easily",
+      "B": "Margin trading",
+      "C": "Store tokens",
+      "D": "Create new tokens"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What language is Succinct compatible with?",
+    "level": "easy",
+    "choices": {
+      "A": "Rust",
+      "B": "Solidity",
+      "C": "Python",
+      "D": "Java"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "Succinct's zkVM runs on which platform?",
+    "level": "easy",
+    "choices": {
+      "A": "Ethereum",
+      "B": "Avalanche",
+      "C": "NEAR",
+      "D": "Cardano"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What does Succinct improve for dApps?",
+    "level": "easy",
+    "choices": {
+      "A": "Performance and security",
+      "B": "Popularity",
+      "C": "Token price",
+      "D": "User count"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What does zkVM stand for in Succinct?",
+    "level": "medium",
+    "choices": {
+      "A": "Zero Knowledge Virtual Machine",
+      "B": "Zero Keep Virtual Machine",
+      "C": "Zebra Kind Virtual Machine",
+      "D": "Zero Kernel VM"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What type of proof does Succinct use?",
+    "level": "medium",
+    "choices": {
+      "A": "zk-SNARK",
+      "B": "zk-STARK",
+      "C": "Proof-of-Work",
+      "D": "Proof-of-History"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What is a key application of Succinct?",
+    "level": "medium",
+    "choices": {
+      "A": "zkRollup",
+      "B": "DEX",
+      "C": "NFT Marketplace",
+      "D": "GameFi"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What time does Succinct help reduce?",
+    "level": "medium",
+    "choices": {
+      "A": "Transaction execution",
+      "B": "NFT creation",
+      "C": "Chain forking",
+      "D": "Wallet creation"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What is the main benefit of zkVM in Succinct?",
+    "level": "medium",
+    "choices": {
+      "A": "Privacy & security",
+      "B": "More users",
+      "C": "Higher market cap",
+      "D": "More tokens"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What interface does Succinct support?",
+    "level": "medium",
+    "choices": {
+      "A": "CLI & SDK",
+      "B": "Only SDK",
+      "C": "Only Web UI",
+      "D": "Proprietary API"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What is Succinct’s main goal?",
+    "level": "medium",
+    "choices": {
+      "A": "Bring zk to all developers",
+      "B": "Build the biggest DEX",
+      "C": "Create blockchain games",
+      "D": "Develop metaverse"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "Who mainly developed Succinct?",
+    "level": "medium",
+    "choices": {
+      "A": "A team from Stanford",
+      "B": "Binance Labs",
+      "C": "Vitalik",
+      "D": "MIT Media Lab"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "Is Succinct’s zkVM compatible with EVM?",
+    "level": "medium",
+    "choices": {
+      "A": "No",
+      "B": "Yes",
+      "C": "Unknown",
+      "D": "Depends on the chain"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "Who is the main target user of Succinct?",
+    "level": "medium",
+    "choices": {
+      "A": "Developers",
+      "B": "Traders",
+      "C": "Investors",
+      "D": "Gamers"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "Which proof system does Succinct’s zkVM use?",
+    "level": "hard",
+    "choices": {
+      "A": "Halo2",
+      "B": "Groth16",
+      "C": "Marlin",
+      "D": "Nova"
+    },
+    "correct_answer": "D"
+  },
+  {
+    "question": "What is Succinct’s key difference from other zk projects?",
+    "level": "hard",
+    "choices": {
+      "A": "Easy to integrate into existing apps",
+      "B": "Strong tokenomics",
+      "C": "Low cost",
+      "D": "Nice UI"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What model does Succinct use for interaction?",
+    "level": "hard",
+    "choices": {
+      "A": "Client-prover",
+      "B": "Node-centralized",
+      "C": "Rollup-direct",
+      "D": "Delegated staking"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "What testing environment does Succinct support?",
+    "level": "hard",
+    "choices": {
+      "A": "Local prover",
+      "B": "Public testnet",
+      "C": "dApp UI test",
+      "D": "No test env"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "Succinct’s zkVM compiles Rust code to what?",
+    "level": "hard",
+    "choices": {
+      "A": "RISC-V bytecode",
+      "B": "EVM bytecode",
+      "C": "WASM",
+      "D": "LLVM"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "How flexible is Succinct’s zkVM?",
+    "level": "hard",
+    "choices": {
+      "A": "Highly - full-stack Rust programming",
+      "B": "Only runs smart contracts",
+      "C": "Frontend only",
+      "D": "Not customizable"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "Which project collaborates with Succinct?",
+    "level": "hard",
+    "choices": {
+      "A": "EigenLayer",
+      "B": "Blur",
+      "C": "Chainlink",
+      "D": "Polygon"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "How does Succinct handle ZK proofs?",
+    "level": "hard",
+    "choices": {
+      "A": "Custom proof system",
+      "B": "zkSync module",
+      "C": "zkBridge",
+      "D": "STARK relay"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "Why does zkVM use RISC-V?",
+    "level": "hard",
+    "choices": {
+      "A": "Optimize performance and proof",
+      "B": "Easy to understand",
+      "C": "Support Solidity",
+      "D": "Lower cost"
+    },
+    "correct_answer": "A"
+  },
+  {
+    "question": "Is Succinct on mainnet?",
+    "level": "hard",
+    "choices": {
+      "A": "Not yet, still developing",
+      "B": "Launched",
+      "C": "No plans",
+      "D": "Development stopped"
+    },
+    "correct_answer": "A"
+  }
+]

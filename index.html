@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2048 Game Rules</title>
+  <!-- Đổi font sang Nunito -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,400,800" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      /* Giữ nguyên gradient nền nếu bạn muốn */
+      background: linear-gradient(135deg, #8C016C, #FE11C5);
+    }
+    .rules-container {
+      background: linear-gradient(135deg, #FFC0CB, #FFFFFF, #ADD8E6);
+      color: #222;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 400px;
+      max-width: 90%;
+      border: 2px solid #FF1493;
+      position: relative;
+    }
+    h1 {
+      font-size: 1.8em;
+      color: #222;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      color: #000;
+    }
+    li {
+      margin: 8px 0;
+    }
+    /* Sửa màu nền nút START GAME sang hồng nhạt, in đậm chữ */
+    .start-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: 800; /* in đậm */
+      color: #222;
+      background: #FFC0CB; /* hồng nhạt */
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .start-btn:hover {
+      background: #FFB6C1; /* đậm hơn một chút khi hover */
+    }
+    .logo {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Trang giới thiệu luật 2048 -->
+  <div class="rules-container">
+    <!-- Bỏ dấu " " khỏi 2048 -->
+    <h1>Succinct Quiz Rules</h1>
+    <ul>
+      <li>🧠 Answer fun multiple-choice questions to test your knowledge.</li>
+      <li>🔢 You’ll choose 1 correct answer from 4 options.</li>
+      <li>📈 There are 3 difficulty levels, increasing every 5 questions.</li>
+      <li>⛔ The game ends when you answer incorrectly.</li>
+    </ul>
+    <button class="start-btn" onclick="startGame()">START GAME</button>
+    <img src="assets/life.png" alt="Logo" class="logo">
+  </div>
+  
+  <script>
+    function startGame() {
+      // Điều hướng sang trang game
+      window.location.href = "pages/page_easy.html";
+    }
+  </script>
+</body>
+</html>

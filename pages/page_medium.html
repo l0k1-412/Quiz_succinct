@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Succinct Quiz - Easy</title>
+
+  <!-- ✅ Import phông chữ Nunito từ Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ✅ Đặt font chữ mặc định cho toàn trang */
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(to right, #f84aa7, #f8d974); /* 🎨 Có thể đổi màu nền ở đây */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* ✅ Container chính của quiz */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #ffe0f0; /* 🎨 Có thể chỉnh màu nền card */
+      border-radius: 20px;
+      padding: 30px;
+      border: 3px solid black;
+      box-sizing: border-box;
+    }
+
+    /* ✅ Header chứa logo và điểm */
+    .header {
+        display: flex;
+        align-items: center; /* ✅ Căn giữa theo chiều dọc */
+        justify-content: space-between;
+        margin-bottom: 30px;
+      }
+
+          /* ✅ Cột bên trái chứa logo + tiêu đề quiz */
+          /* ✅ Đảm bảo logo chiếm full chiều cao 2 dòng text */
+      .logo-box {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo-box img {
+        height: 60px; /* 🎯 bạn có thể chỉnh size tại đây */
+        margin-right: 15px;
+      }
+
+      .quiz-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+    /* ✅ Box điểm số bên phải */
+    .score-box {
+      background-color: #f780b4; /* 🎨 Màu nền box điểm */
+      padding: 10px 15px;
+      border: 2px solid black;
+      border-radius: 10px;
+      text-align: right;
+      font-weight: bold;
+    }
+
+    /* ✅ Hiển thị câu hỏi */
+    .question {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* ✅ Grid chứa các nút chọn đáp án */
+    .choices {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ✅ Nút đáp án */
+    .choice-btn {
+      background-color: #ff5ca5; /* 🎨 Màu nút đáp án */
+      color: black;
+      padding: 20px;
+      border: 2px solid black;
+      border-radius: 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-align: center;
+    }
+
+    /* ✅ Hover đáp án */
+    .choice-btn:hover {
+      background-color: #ff338a; /* 🎨 Hover màu */
+    }
+
+    /* ✅ Nút đúng */
+    .correct {
+      background-color: #5cd65c !important; /* 🎨 Màu xanh đáp án đúng */
+      position: relative;
+    }
+
+    /* ✅ Nút sai */
+    .incorrect {
+      background-color: #ff6666 !important; /* 🎨 Màu đỏ đáp án sai */
+      position: relative;
+    }
+
+    /* ✅ Thêm dấu tick/cross */
+    .correct::after {
+      content: " ✔";
+      font-weight: bold;
+    }
+    .incorrect::after {
+      content: " ✘";
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Khung chính -->
+  <div class="container">
+    <!-- ✅ Header với logo bên trái và điểm bên phải -->
+    <div class="header">
+      <div class="logo-box">
+        <!-- ✅ Đường dẫn logo có thể thay thế tùy ý -->
+        <img src="../assets/life.png" alt="Logo">
+        <div class="quiz-info">
+          Succinct Quiz<br>
+          Level: Medium
+        </div>
+      </div>
+
+      <!-- ✅ Box điểm -->
+      <div class="score-box" id="scoreBox">
+        Correct: 5/15<br>
+        Score: 500
+      </div>
+    </div>
+
+    <!-- ✅ Câu hỏi -->
+    <div class="question" id="questionText">Loading...</div>
+
+    <!-- ✅ Đáp án -->
+    <div class="choices" id="choicesContainer"></div>
+  </div>
+
+  <script>
+    // ✅ Các biến điều khiển logic
+    let currentQuestionIndex = 0;
+    let score = parseInt(localStorage.getItem("score")) || 0;
+    let correctCount = parseInt(localStorage.getItem("correct")) || 0;
+    let selected = false;
+    let currentQuestions = [];
+
+    // ✅ Tải dữ liệu từ file JSON và lọc câu hỏi "medium"
+    async function loadQuestions() {
+      const res = await fetch("../assets/succinct_quiz_questions_en.json");
+      const data = await res.json();
+      const mediumQuestions = data.filter(q => q.level.toLowerCase() === "medium");
+      currentQuestions = shuffle(mediumQuestions).slice(0, 5); // ✅ Chọn 5 câu ngẫu nhiên
+      showQuestion();
+    }
+
+    // ✅ Hiển thị câu hỏi hiện tại
+    function showQuestion() {
+      selected = false;
+      const q = currentQuestions[currentQuestionIndex];
+      document.getElementById("questionText").innerText = `Question ${currentQuestionIndex + 6}: ${q.question}`;
+
+      const choicesHTML = Object.entries(q.choices).map(([key, val]) => {
+        return `<div class="choice-btn" onclick="handleAnswer('${key}', this)">${key}. ${val}</div>`;
+      }).join('');
+
+      document.getElementById("choicesContainer").innerHTML = choicesHTML;
+      updateScoreBox();
+    }
+
+    // ✅ Xử lý khi chọn đáp án
+    function handleAnswer(answer, el) {
+      if (selected) return;
+      selected = true;
+
+      const correct = currentQuestions[currentQuestionIndex].correct_answer;
+      const buttons = document.querySelectorAll(".choice-btn");
+
+      // ✅ Gán class đúng/sai
+      buttons.forEach(btn => {
+        const text = btn.innerText.trim();
+        if (text.startsWith(correct)) {
+          btn.classList.add("correct");
+        }
+        if (text.startsWith(answer) && answer !== correct) {
+          btn.classList.add("incorrect");
+        }
+      });
+
+      // ✅ Tính điểm
+      if (answer === correct) {
+        score += 200;
+        correctCount++;
+      } else {
+        // ❌ Nếu sai → về trang game_over
+        setTimeout(() => {
+          localStorage.setItem("score", score);
+          localStorage.setItem("correct", correctCount);
+          window.location.href = "game_over.html";
+        }, 3000);
+        return;
+      }
+
+      // ✅ Nếu đúng → tiếp tục
+      setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < 5) {
+          showQuestion();
+        } else {
+          localStorage.setItem("score", score);
+          localStorage.setItem("correct", correctCount);
+          window.location.href = "page_hard.html";
+        }
+      }, 1000);
+    }
+
+    // ✅ Cập nhật điểm hiển thị
+    function updateScoreBox() {
+      document.getElementById("scoreBox").innerHTML = `Correct: ${correctCount}/15<br>Score: ${score}`;
+    }
+
+    // ✅ Hàm xáo trộn mảng
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    // ✅ Bắt đầu khi load trang
+    loadQuestions();
+  </script>
+</body>
+</html>

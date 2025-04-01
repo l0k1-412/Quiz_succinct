@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Over - Succinct Quiz</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:800" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #e2186a, #f257a1); /* 🎨 Gradient đỏ hồng */
+    }
+
+    .game-over-container {
+      background: linear-gradient(135deg, #FFC0CB, #FFFFFF, #ADD8E6); /* 🌈 Gradient box */
+      color: #222;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      width: 320px;
+      max-width: 90%;
+      border: 2px solid #FF1493;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    .title {
+      font-size: 2em;
+      font-weight: 800;
+      text-align: left;
+    }
+
+    .subtitle {
+      font-size: 1.1em;
+      font-weight: 800;
+      margin-top: 5px;
+    }
+
+    .score {
+      font-size: 1.2em;
+      font-weight: 800;
+      margin-top: 5px;
+    }
+
+    .restart-btn {
+      background: #FF69B4;
+      color: white;
+      font-size: 1.2em;
+      font-weight: bold;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s;
+      width: 85%;
+      text-align: center;
+    }
+
+    .restart-btn:hover {
+      background: #FF1493;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="game-over-container">
+    <div class="header">
+      <img src="../assets/life.png" alt="Logo" class="logo">
+      <div class="title">Succinct<br>Quiz</div>
+    </div>
+    <!-- ✅ Thông tin kết quả -->
+    <div class="subtitle" id="correctText">Correct: ?/15</div>
+    <div class="score" id="finalScore">Final Score: ?</div>
+
+    <!-- ✅ Nút restart -->
+    <button class="restart-btn" onclick="restartGame()">Restart Game</button>
+  </div>
+
+  <script>
+    function restartGame() {
+      // ✅ Quay lại từ đầu game
+      window.location.href = "../index.html";
+    }
+
+    // ✅ Load score và correct từ localStorage
+    document.addEventListener("DOMContentLoaded", () => {
+      const score = localStorage.getItem("score") || 0;
+      const correct = localStorage.getItem("correct") || 0;
+
+      document.getElementById("finalScore").innerHTML = `Final Score: ${score}`;
+      document.getElementById("correctText").innerHTML = `Correct: ${correct}/15`;
+    });
+  </script>
+</body>
+</html>
