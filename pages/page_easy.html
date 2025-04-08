@@ -9,120 +9,129 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
-    /* ✅ Đặt font chữ mặc định cho toàn trang */
+    /* ✅ Set default font for the whole page */
     body {
-      font-family: 'Nunito', sans-serif;
-      background: linear-gradient(to right, #c2f0dc, #a5d3f5); /* 🎨 Có thể đổi màu nền ở đây */
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: 'Nunito', sans-serif; /* Use a clean modern font */
+      
+      /* 🎨 Background gradient from mint green (#c2f0dc) to pastel blue (#a5d3f5) */
+      background: linear-gradient(to right, #c2f0dc, #a5d3f5);
+  
+      margin: 0; /* Remove default browser margin */
+      padding: 0; /* Remove default padding */
+      display: flex; /* Use Flexbox layout */
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+      height: 100vh; /* Full height of the viewport */
     }
-
-    /* ✅ Container chính của quiz */
+  
+    /* ✅ Main container of the quiz */
     .container {
-      max-width: 900px;
-      margin: 40px auto;
-      background-color: #ffe0f0; /* 🎨 Có thể chỉnh màu nền card */
-      border-radius: 20px;
-      padding: 30px;
-      border: 3px solid black;
-      box-sizing: border-box;
+      max-width: 900px; /* Maximum width */
+      margin: 40px auto; /* Center horizontally with space top & bottom */
+  
+      /* 🎨 Soft pink background */
+      background-color: #ffe0f0;
+  
+      border-radius: 20px; /* Rounded corners */
+      padding: 30px; /* Inner spacing */
+      border: 3px solid black; /* Solid black border */
+      box-sizing: border-box; /* Include padding and border in width/height */
     }
-
-    /* ✅ Header chứa logo và điểm */
+  
+    /* ✅ Header section containing logo and score */
     .header {
-        display: flex;
-        align-items: center; /* ✅ Căn giữa theo chiều dọc */
-        justify-content: space-between;
-        margin-bottom: 30px;
-      }
-
-          /* ✅ Cột bên trái chứa logo + tiêu đề quiz */
-          /* ✅ Đảm bảo logo chiếm full chiều cao 2 dòng text */
-      .logo-box {
-        display: flex;
-        align-items: center;
-      }
-
-      .logo-box img {
-        height: 60px; /* 🎯 bạn có thể chỉnh size tại đây */
-        margin-right: 15px;
-      }
-
-      .quiz-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 20px;
-      }
-
-    /* ✅ Box điểm số bên phải */
+      display: flex; /* Horizontal layout */
+      align-items: center; /* Vertically center the items */
+      justify-content: space-between; /* Push left and right sections apart */
+      margin-bottom: 30px; /* Space below the header */
+    }
+  
+    /* ✅ Left column: logo + quiz title */
+    .logo-box {
+      display: flex;
+      align-items: center; /* Vertically center logo and text */
+    }
+  
+    /* ✅ Logo image */
+    .logo-box img {
+      height: 60px; /* 🎯 Adjust logo size here */
+      margin-right: 15px; /* Space between logo and text */
+    }
+  
+    /* ✅ Quiz title and info */
+    .quiz-info {
+      display: flex;
+      flex-direction: column; /* Stack title lines vertically */
+      justify-content: center; /* Center text vertically */
+      font-weight: bold; /* Make text bold */
+      font-size: 20px; /* Slightly larger text */
+    }
+  
+    /* ✅ Score box on the right */
     .score-box {
-      background-color: #f780b4; /* 🎨 Màu nền box điểm */
-      padding: 10px 15px;
-      border: 2px solid black;
-      border-radius: 10px;
-      text-align: right;
-      font-weight: bold;
+      background-color: #f780b4; /* 🎨 Bright pink background */
+      padding: 10px 15px; /* Inner spacing */
+      border: 2px solid black; /* Solid black border */
+      border-radius: 10px; /* Rounded corners */
+      text-align: right; /* Align text to the right */
+      font-weight: bold; /* Bold text */
     }
-
-    /* ✅ Hiển thị câu hỏi */
+  
+    /* ✅ Question text */
     .question {
-      font-size: 24px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 30px;
+      font-size: 24px; /* Large font size for visibility */
+      font-weight: bold; /* Make it stand out */
+      text-align: center; /* Center the text */
+      margin-bottom: 30px; /* Space below the question */
     }
-
-    /* ✅ Grid chứa các nút chọn đáp án */
+  
+    /* ✅ Grid layout for answer choices */
     .choices {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      display: grid; /* Use CSS grid */
+      grid-template-columns: 1fr 1fr; /* Create 2 equal columns */
+      gap: 20px; /* Space between answer buttons */
     }
-
-    /* ✅ Nút đáp án */
+  
+    /* ✅ Style for each answer button */
     .choice-btn {
-      background-color: #ff5ca5; /* 🎨 Màu nút đáp án */
-      color: black;
-      padding: 20px;
-      border: 2px solid black;
-      border-radius: 20px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s ease;
-      text-align: center;
+      background-color: #ff5ca5; /* 🎨 Bright pink button */
+      color: black; /* Black text */
+      padding: 20px; /* Inner padding */
+      border: 2px solid black; /* Black border */
+      border-radius: 20px; /* Rounded button */
+      font-size: 16px; /* Medium text size */
+      cursor: pointer; /* Pointer cursor on hover */
+      transition: 0.3s ease; /* Smooth hover animation */
+      text-align: center; /* Center the text inside the button */
     }
-
-    /* ✅ Hover đáp án */
+  
+    /* ✅ Hover effect for answer buttons */
     .choice-btn:hover {
-      background-color: #ff338a; /* 🎨 Hover màu */
+      background-color: #ff338a; /* 🎨 Slightly darker pink when hovered */
     }
-
-    /* ✅ Nút đúng */
+  
+    /* ✅ Correct answer style */
     .correct {
-      background-color: #5cd65c !important; /* 🎨 Màu xanh đáp án đúng */
-      position: relative;
+      background-color: #5cd65c !important; /* 🎨 Green background for correct */
+      position: relative; /* Required to add ✔ icon later */
     }
-
-    /* ✅ Nút sai */
+  
+    /* ✅ Incorrect answer style */
     .incorrect {
-      background-color: #ff6666 !important; /* 🎨 Màu đỏ đáp án sai */
-      position: relative;
+      background-color: #ff6666 !important; /* 🎨 Red background for wrong answer */
+      position: relative; /* Required to add ✘ icon later */
+    }
+  
+    /* ✅ Add check mark (✔) to correct answer */
+    .correct::after {
+      content: " ✔"; /* Check mark symbol */
+      font-weight: bold; /* Bold symbol */
     }
 
-    /* ✅ Thêm dấu tick/cross */
-    .correct::after {
-      content: " ✔";
-      font-weight: bold;
-    }
+    /* ✅ Add X mark (✘) to incorrect answer */
     .incorrect::after {
-      content: " ✘";
-      font-weight: bold;
+      content: " ✘"; /* X mark symbol */
+      font-weight: bold; /* Bold symbol */
     }
   </style>
 </head>

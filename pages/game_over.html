@@ -6,85 +6,100 @@
   <title>Game Over - Succinct Quiz</title>
   <link href="https://fonts.googleapis.com/css?family=Nunito:800" rel="stylesheet">
   <style>
+    /* ✅ Set up the base style for the entire page */
     body {
-      font-family: 'Nunito', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(135deg, #e2186a, #f257a1); /* 🎨 Gradient đỏ hồng */
+      font-family: 'Nunito', sans-serif; /* Use a clean and modern font */
+      display: flex; /* Enable Flexbox layout */
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+      height: 100vh; /* Use full height of the screen */
+      margin: 0; /* Remove default page margin */
+  
+      /* 🎨 Pink-red gradient background (from left-top to right-bottom) */
+      background: linear-gradient(135deg, #e2186a, #f257a1);
     }
-
+  
+    /* ✅ Container for the Game Over screen */
     .game-over-container {
-      background: linear-gradient(135deg, #FFC0CB, #FFFFFF, #ADD8E6); /* 🌈 Gradient box */
-      color: #222;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      width: 320px;
-      max-width: 90%;
-      border: 2px solid #FF1493;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      /* 🌈 Soft gradient background for the box */
+      background: linear-gradient(135deg, #FFC0CB, #FFFFFF, #ADD8E6);
+  
+      color: #222; /* Dark gray text color */
+      padding: 20px; /* Space inside the container */
+      border-radius: 15px; /* Rounded corners */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Drop shadow effect */
+      
+      width: 320px; /* Fixed width for desktop */
+      max-width: 90%; /* Responsive width for smaller screens */
+      border: 2px solid #FF1493; /* Bright pink border */
+      
+      text-align: center; /* Center all text inside */
+      display: flex; /* Use Flexbox */
+      flex-direction: column; /* Stack content vertically */
+      justify-content: center; /* Vertically center content */
+      align-items: center; /* Horizontally center content */
     }
-
+  
+    /* ✅ Header section (logo + title) */
     .header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      margin-bottom: 10px;
+      display: flex; /* Place elements side by side */
+      align-items: center; /* Vertically align items */
+      justify-content: center; /* Center content horizontally */
+      width: 100%; /* Take full width of container */
+      margin-bottom: 10px; /* Add spacing below header */
     }
-
+  
+    /* ✅ Logo image styling */
     .logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 8px;
-      padding: 5px;
-      margin-right: 10px;
+      width: 80px; /* Set width */
+      height: 80px; /* Set height */
+      border-radius: 8px; /* Slightly rounded corners */
+      padding: 5px; /* Inner spacing */
+      margin-right: 10px; /* Space between logo and text */
     }
-
+  
+    /* ✅ Title text (e.g. “Game Over”) */
     .title {
-      font-size: 2em;
-      font-weight: 800;
-      text-align: left;
+      font-size: 2em; /* Make title big */
+      font-weight: 800; /* Extra bold text */
+      text-align: left; /* Align text to the left */
     }
-
+  
+    /* ✅ Subtitle text (e.g. “Your final score is…”) */
     .subtitle {
-      font-size: 1.1em;
-      font-weight: 800;
-      margin-top: 5px;
+      font-size: 1.1em; /* Slightly larger than normal text */
+      font-weight: 800; /* Bold */
+      margin-top: 5px; /* Small spacing above */
     }
-
+  
+    /* ✅ Score display */
     .score {
-      font-size: 1.2em;
-      font-weight: 800;
-      margin-top: 5px;
+      font-size: 1.2em; /* A bit larger text */
+      font-weight: 800; /* Bold */
+      margin-top: 5px; /* Space above score */
     }
-
+  
+    /* ✅ Restart button */
     .restart-btn {
-      background: #FF69B4;
-      color: white;
-      font-size: 1.2em;
-      font-weight: bold;
-      padding: 15px 20px;
-      border: none;
-      border-radius: 15px;
-      cursor: pointer;
-      margin-top: 20px;
-      transition: background 0.3s;
-      width: 85%;
-      text-align: center;
+      background: #FF69B4; /* 🎨 Bright pink background */
+      color: white; /* White text for contrast */
+      font-size: 1.2em; /* Medium-large text size */
+      font-weight: bold; /* Bold font */
+      padding: 15px 20px; /* Space inside button */
+      border: none; /* Remove default border */
+      border-radius: 15px; /* Rounded corners */
+      cursor: pointer; /* Pointer cursor on hover */
+      margin-top: 20px; /* Space above the button */
+      transition: background 0.3s; /* Smooth transition effect */
+      width: 85%; /* Button takes most of the container width */
+      text-align: center; /* Center the text inside the button */
     }
-
+  
+    /* ✅ Hover effect for the restart button */
     .restart-btn:hover {
-      background: #FF1493;
+      background: #FF1493; /* 🎨 Darker pink on hover */
     }
-  </style>
+  </style>  
 </head>
 <body>
 
